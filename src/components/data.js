@@ -7,26 +7,34 @@ const dataEmploees = [
     id: 0,
   },
   {
+    nameEmploee: 'Sofia',
+    salaryEmploee: 92000,
+    increase: true,
+    like: true,
+    id: 1,
+  },
+  {
     nameEmploee: 'Andrey',
     salaryEmploee: 62000,
     increase: false,
     like: false,
-    id: 1,
+    id: 2,
   },
   {
     nameEmploee: 'Alina',
     salaryEmploee: 32000,
     increase: true,
     like: false,
-    id: 2,
+    id: 3,
   },
   {
     nameEmploee: 'Marina',
     salaryEmploee: 52000,
     increase: false,
     like: false,
-    id: 3,
+    id: 4,
   },
+  
 ];
 
 export default dataEmploees;

@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
     this.state = {
       data: dataEmploees,
-      maxId: 3,
+      maxId: 4,
       searchText: '',
     };
   }
