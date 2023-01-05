@@ -1,0 +1,13 @@
+.app {
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.search-and-filter {
+    background-color: #3d5a80;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+}

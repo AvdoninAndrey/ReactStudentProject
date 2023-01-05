@@ -1,0 +1,12 @@
+.app-info {
+    padding: 25px;
+    background-color: #3d5a80;
+    color: #fff;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+}
+.app-info h1 {
+    font-size: 30px;
+}
+.app-info h2 {
+    font-size: 24px;
+}

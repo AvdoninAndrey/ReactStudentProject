@@ -1,0 +1,13 @@
+.form-add-emploee {
+    margin-top: 20px;
+    background-color: #3d5a80;
+    color: #fff;
+    padding: 25px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+}
+.form-add-emploee input {
+    border-radius: 0px;
+    padding: 10px;
+    margin-right: 25px;
+    width: 300px;
+}
