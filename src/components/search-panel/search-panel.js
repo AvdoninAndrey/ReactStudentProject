@@ -1,7 +1,23 @@
+import { Component } from 'react';
 import './search-panel.css';
 
-const SearchPanel = (props) => {
-  const { onSearch } = props;
+class SearchPanel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: ''
+    }
+  }
+  onUpdateSearch = (event) => {
+    const inputText = event.target.value;
+    this.setState({
+      searchText: inputText,
+    })
+    this.props.onUpdateSearch(inputText);
+  }
+
+  render() {
+    
 
   return (
     <div className="search-panel">
@@ -9,10 +25,14 @@ const SearchPanel = (props) => {
         className="form-control search-input"
         type="text"
         placeholder="Найти сотрудника"
-        onChange={onSearch}
+        value={this.state.searchText}
+        onChange={this.onUpdateSearch}
       />
     </div>
   );
-};
+  }
+}
+
+
 
 export default SearchPanel;

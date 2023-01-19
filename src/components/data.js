@@ -15,7 +15,7 @@ const dataEmploees = [
   },
   {
     nameEmploee: 'Andrey',
-    salaryEmploee: 62000,
+    salaryEmploee: 22000,
     increase: false,
     like: false,
     id: 2,

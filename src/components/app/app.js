@@ -17,6 +17,7 @@ class App extends Component {
       data: dataEmploees,
       maxId: 4,
       searchText: '',
+      filterNameActive: 'all'
     };
   }
   deleteEmploees = (id) => {
@@ -58,23 +59,38 @@ class App extends Component {
     return data.filter((item) => item.nameEmploee.indexOf(text) > -1);
   }
 
-  onSearch = (text) => {
-    this.setState(({ data, searchText }) => ({
-      data: this.searchEmploee(text, data),
-      searchText: text,
-    }));
-  };
+  onUpdateSearch = (searchText) => {
+    this.setState({searchText})
+  }
+
+  filterDataEmploees = (filterName, data) => {
+    switch(filterName) {
+      case 'rasing':
+        return data.filter(item => item.like)
+      case 'salaryMore30000':
+        return data.filter(item => item.salaryEmploee > 30000);
+      default:
+        return data;
+    }
+  }
+  onUpdateFilter = (filterNameActive) => {
+    this.setState({filterNameActive})
+  }  
 
   render() {
+
+    const { data, searchText, filterNameActive } = this.state; 
+    const renderDataEmploees = this.filterDataEmploees(filterNameActive, this.searchEmploee(searchText, data));
+
     return (
       <div className="app">
         <AppInfo data={this.state.data} />
         <div className="search-and-filter">
-          <SearchPanel onSearch={this.onSearch} />
-          <AppFilter />
+          <SearchPanel onUpdateSearch={this.onUpdateSearch} />
+          <AppFilter filterNameActive={filterNameActive} onUpdateFilter={this.onUpdateFilter} />
         </div>
         <EmploessList
-          data={this.state.data}
+          data={renderDataEmploees}
           onDelete={this.deleteEmploees}
           onToggleProp={this.onToggleProp}
         />
